@@ -1,7 +1,9 @@
 # setup.py
 
-from setuptools import setup
+# virtualenv venv
+# venv\scripts\activate
 
+from setuptools import setup
 
 def read_requirements():
     with open("requirements.txt") as fp:
