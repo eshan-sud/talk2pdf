@@ -1,5 +1,9 @@
 # Talk2PDFs - Website Chatbot
 
+<img src="https://github.com/user-attachments/assets/d2d8f374-9e91-4b97-9565-043986c98083" width=500px />
+
+
+
 **Talk2PDFs** is a web application that lets users interact with PDF documents through a chatbot. Users can upload PDFs or provide URLs, and the chatbot will use the extracted content to answer questions.
 
 ## Technologies Used
