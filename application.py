@@ -59,13 +59,27 @@ def init_app():
         if 'chatbot_chain' not in st.session_state:
             st.session_state['chatbot_chain'] = create_chatbot_chain()
 
+    # Display chat history
+    if 'chat_history' in st.session_state and st.session_state['chat_history']:
+        for message in st.session_state['chat_history']:
+            with st.chat_message(message["role"]):
+                st.markdown(message["message"])
+
     question = st.text_input("Ask a question about the PDFs/URLs:")
 
     if st.button("Submit Question"):
         if corpus and question:
+            # Store user message in chat history
+            user_message = {"role": "user", "message": question}
+            st.session_state['chat_history'].append(user_message)
+
             with st.spinner('Processing your question...'):
                 response = get_chatbot_response(st.session_state['chatbot_chain'], question)
                 if response:
+                    # Store assistant response in chat history
+                    chatbot_message = {"role": "assistant", "message": response}
+                    st.session_state['chat_history'].append(chatbot_message)
+
                     st.success("Response received!")
                     st.write("**Response:**", response)
                 else:
