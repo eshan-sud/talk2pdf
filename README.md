@@ -3,10 +3,13 @@
 <img src="https://github.com/user-attachments/assets/d2d8f374-9e91-4b97-9565-043986c98083" width=500px />
 
 
-
 **Talk2PDFs** is a web application that lets users interact with PDF documents through a chatbot. Users can upload PDFs or provide URLs, and the chatbot will use the extracted content to answer questions.
 
+
 ## Technologies Used
+
+<img src="https://github.com/user-attachments/assets/25a87d8f-2dac-4b35-95fd-c1cbb9b1f77a" width=500px />
+
 
 - **Python**
 - **Streamlit** - For the web interface.
@@ -18,6 +21,9 @@
   3. After installation, use pip to install ChromaDB
 
 ## Key Features
+
+<img src="https://github.com/user-attachments/assets/afd6a98b-3918-4c87-9c45-cd9e03d37796" width=500px />
+
 
 - **PDF Upload/URL Input:** Upload PDFs or provide URLs to process and extract text.
 - **Text Extraction:** Extracts and processes text from PDFs for interaction.
