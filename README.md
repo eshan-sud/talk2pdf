@@ -1,53 +1,80 @@
 # Talk2PDFs - Website Chatbot
 
-**Talk2PDFs** is a web application that allows users to interact with PDF documents through a chatbot interface. Users can upload PDFs or provide URLs to extract and process the content, which the chatbot uses to answer questions.
+**Talk2PDFs** is a web application that lets users interact with PDF documents through a chatbot. Users can upload PDFs or provide URLs, and the chatbot will use the extracted content to answer questions.
 
 ## Technologies Used
 
-- Python
-- Streamlit
-- Ollama - llama3.2 model
+- **Python**
+- **Streamlit** - For the web interface.
+- **Ollama** - Using the `llama3.2` model for language processing.
+- **Visual Studio Build Tools** - Required for compiling dependencies like ChromaDB.
 
-  ```
-  ollama run llama3.2
-  ```
-
-- Visual Studio Build Tools:
-
-Download and install Visual Studio Build Tools.
-During installation, make sure to select the C++ build tools workload.
-Install Required Libraries:
-
-Some packages that chromadb relies on might need additional C++ libraries. Ensure you have numpy, scipy, and pandas installed as they are commonly used with chromadb.
-Install chromadb:
-
-Use pip to install:
-bash
-Copy code
-pip install chromadb
+  1. Download and install Visual Studio Build Tools.
+  2. During installation, make sure to select the **C++ build tools** workload.
+  3. After installation, use pip to install ChromaDB
 
 ## Key Features
 
-- **PDF Upload and URL Input:** Upload PDFs or provide URLs to extract text from documents.
+- **PDF Upload/URL Input:** Upload PDFs or provide URLs to process and extract text.
 - **Text Extraction:** Extracts and processes text from PDFs for interaction.
-- **Interactive Chatbot:** Engage with a chatbot that answers questions based on the content of the PDFs.
-- **Text Preview:** Provides a preview of the extracted text for user reference.
-- **Real-Time Processing:** Efficiently handles and processes user queries with minimal latency.
-- **Easy Setup:** Simple installation and setup process using Streamlit.
-- **Integration with Vector Database:** Uses FAISS and HuggingFace embeddings for efficient document retrieval and response generation.
-- **Session Memory:**
+- **Chatbot Interaction:** Ask questions related to the uploaded PDFs and get responses.
+- **Text Preview:** View a snippet of the extracted text before asking questions.
+- **Real-Time Responses:** Quickly get answers based on the content of the documents.
+- **Integration with Vector Database:** Uses ChromaDB for efficient document retrieval.
+- **Session Memory:** The chatbot retains previous interactions during a session for continuity.
+- **Chat History:** Keeps a log of the session’s conversations.
 
 ## Setup
 
-1. Install Streamlit & Langchain & ChromaDB:
+### Using setup.py
+
+You can set up the project using the provided `setup.py` file. This will automatically install the required dependencies listed in `requirements.txt`.
+
+1. Make sure you have a `requirements.txt` file with the necessary packages.
+2. Run the following command to install the package:
+
+### Manual Setup
+
+If you prefer to set up manually:
+
+1. Install Streamlit, Langchain, Langchain Community and ChromaDB:
 
    ```bash
-   pip install streamlit langchain chromadb
+   pip install streamlit langchain langchain_community chromadb
    ```
 
 2. Running:
-   ```
+
+   ```bash
    streamlit run application.py
    ```
 
-<!-- pip install torch fairscale fire blobfile -->
+3. For running Ollama (LLM):
+
+   ```bash
+   ollama run llama3.2
+   ```
+
+## For Developers
+
+### Virtual Environment Setup:
+
+1. Create a virtual environment:
+
+   ```bash
+   python -m venv venv
+   ```
+
+2. Activate the virtual environment:
+
+- On Windows:
+
+```bash
+venv\Scripts\activate
+```
+
+- On Windows:
+
+```bash
+source venv/bin/activate
+```
